@@ -80,7 +80,13 @@
             <artifactId>airport</artifactId>
             <version>1.0.1</version>
             <scope>system</scope>
-            <systemPath>${basedir}/lib/airport-1.0.1.jar</systemPath>
+            <systemPath>C:/Users/gamal/Downloads/13.14 AdvancedOOPFeatures/11_AdvancedOOPFeatures/homework_11.2/Airport/lib/airport-1.0.1.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
