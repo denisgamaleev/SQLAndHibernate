@@ -20,21 +20,19 @@ public class CustomerStorage {
         Pattern patternPhone = Pattern.compile(phone);
         Pattern patternEmail = Pattern.compile(email);
         String[] components = data.split("\\s+");
-        String name = components[INDEX_NAME] + " " + components[INDEX_SURNAME];
         Matcher matcherPhone = patternPhone.matcher(components[INDEX_PHONE]);
         Matcher matcherEmail = patternEmail.matcher(components[INDEX_EMAIL]);
         if (components.length != 4) {
             throw new ArrayIndexOutOfBoundsException();
         }
         if (!matcherPhone.find()) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Wrong format of phone");
         }
         if (!matcherEmail.find()) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Wrong format of email");
         }
-         else {
-            storage.put(name, new Customer(name, components[INDEX_PHONE], components[INDEX_EMAIL]));
-        }
+        String name = components[INDEX_NAME] + " " + components[INDEX_SURNAME];
+        storage.put(name, new Customer(name, components[INDEX_PHONE], components[INDEX_EMAIL]));
     }
 
     public void listCustomers() {

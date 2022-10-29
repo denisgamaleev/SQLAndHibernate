@@ -23,23 +23,22 @@ public class Main {
                     System.out.println("не верный формат ввода : " + ADD_COMMAND);
                 } catch (IllegalAccessException ex) {
                     System.out.println("не верный формат email : ");
-                } catch(IllegalArgumentException ex){
-                System.out.println("не верный формат phone : ");
+                } catch (IllegalArgumentException ex) {
+                    System.out.println("не верный формат phone : ");
+                } catch (Exception ex) {
+                    System.out.println("Что то пошло не так");
+                }
+            } else if (tokens[0].equals("list")) {
+                executor.listCustomers();
+            } else if (tokens[0].equals("remove")) {
+                executor.removeCustomer(tokens[1]);
+            } else if (tokens[0].equals("count")) {
+                System.out.println("There are " + executor.getCount() + " customers");
+            } else if (tokens[0].equals("help")) {
+                System.out.println(helpText);
+            } else {
+                System.out.println(COMMAND_ERROR);
             }
-                catch(Exception ex){
-                System.out.println("Что то пошло не так");
-            }
-        } else if (tokens[0].equals("list")) {
-            executor.listCustomers();
-        } else if (tokens[0].equals("remove")) {
-            executor.removeCustomer(tokens[1]);
-        } else if (tokens[0].equals("count")) {
-            System.out.println("There are " + executor.getCount() + " customers");
-        } else if (tokens[0].equals("help")) {
-            System.out.println(helpText);
-        } else {
-            System.out.println(COMMAND_ERROR);
         }
     }
-}
 }
