@@ -22,7 +22,7 @@ public class Main {
                 } catch (ArrayIndexOutOfBoundsException ex) {
                     System.out.println("не верный формат ввода : " + ADD_COMMAND);
                 } catch (IllegalAccessException ex) {
-                    System.out.println("не верный формат email : ");
+                    System.out.println("не верный формат email: ");
                 } catch (IllegalArgumentException ex) {
                     System.out.println("не верный формат phone : ");
                 } catch (Exception ex) {

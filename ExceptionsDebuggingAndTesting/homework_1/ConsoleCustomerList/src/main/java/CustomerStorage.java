@@ -29,7 +29,7 @@ public class CustomerStorage {
             throw new IllegalArgumentException("Wrong format of phone");
         }
         if (!matcherEmail.find()) {
-            throw new IllegalArgumentException("Wrong format of email");
+            throw new IllegalAccessException("Wrong format of email");
         }
         String name = components[INDEX_NAME] + " " + components[INDEX_SURNAME];
         storage.put(name, new Customer(name, components[INDEX_PHONE], components[INDEX_EMAIL]));
