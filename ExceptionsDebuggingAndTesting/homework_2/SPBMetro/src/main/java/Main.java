@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    private static final String DATA_FILE = "src/main/resources/map.json";
+    private static final String DATA_FILE = "homework_2/SPBMetro/src/main/resources/map.json";
     private static Scanner scanner;
 
     private static StationIndex stationIndex;
@@ -26,6 +26,7 @@ public class Main {
             Station to = takeStation("Введите станцию назначения:");
 
             List<Station> route = calculator.getShortestRoute(from, to);
+            System.out.println( calculator.getShortestRoute(from,to));
             System.out.println("Маршрут:");
             printRoute(route);
 
