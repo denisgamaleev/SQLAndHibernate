@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN" >
+    <appenders>
+
+        <File name="MyFile2" fileName="logs/errors.log" immediateFlush="true">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+        </File>
+        <File name="MyFile" fileName="logs/queries.log" immediateFlush="true">
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+        </File>
+    </appenders>
+    <loggers>
+        <root level="all" additivity="true">
+            <appender-ref ref="MyFile2" level="ERROR"/>
+            <appender-ref ref="MyFile" level="INFO"/>
+        </root>
+    </loggers>
+</configuration>

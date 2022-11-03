@@ -16,7 +16,7 @@ public class CustomerStorage {
         final int INDEX_EMAIL = 2;
         final int INDEX_PHONE = 3;
         String phone = "[+][7,8][0-9]{10}";
-        String email = "[a-z]@gmail.com";
+        String email = "\\b[\\w.%-]+@[-.\\w]+\\.[A-Za-z]{2,4}\\b";
         Pattern patternPhone = Pattern.compile(phone);
         Pattern patternEmail = Pattern.compile(email);
         String[] components = data.split("\\s+");
